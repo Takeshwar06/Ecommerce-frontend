@@ -1,4 +1,4 @@
-export const host="http://localhost:4000";
+export const host="https://ecommerce-api-tlox.onrender.com";
 
 export const getCurrentUser = `${host}/api/v1/users/current-user`
 export const userRegister = `${host}/api/v1/users/register`
