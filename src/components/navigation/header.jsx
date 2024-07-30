@@ -12,6 +12,12 @@ export default function Header() {
   const navigate = useNavigate();
 
   const logoutUser = async () => {
+    localStorage.removeItem("token");
+    navigate("/auth");
+    setAuth({
+      token: null,
+      user: null,
+    });
     console.log(auth);
     try {
       await axios.post(
@@ -23,12 +29,6 @@ export default function Header() {
           },
         }
       );
-      localStorage.removeItem("token");
-      navigate("/auth");
-      setAuth({
-        token: null,
-        user: null,
-      });
     } catch (error) {}
   };
   return (

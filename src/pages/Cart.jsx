@@ -40,6 +40,8 @@ export default function Cart() {
   const totalPrice = cartItems.reduce((total, item) => {
     if (item.productId) {
       return total + item.productId.price * item.quantity;
+    }else{
+      return total
     }
   }, 0);
 
